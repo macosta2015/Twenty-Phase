@@ -12,7 +12,7 @@ const pasteIntoSketchFunction = require('./components/pasteIntoSketchFunction.js
 const editIntoSketchFunction = require('./components/editIntoSketchFunction.js');
 const renameIntoSketchFunction = require('./components/renameIntoSketchFunction.js');
 const waitForEnter = require('./components/waitForEnter.js');
-const searchAndClickTransform = require('./components/searchAndClickExtrude.js');
+const searchAndClickTransform = require('./components/searchAndClickTransform.js');
 const searchAndClickCustomExtrude2 = require('./components/searchAndClickCustomExtrude2.js');
 const searchAndClickExtrude = require('./components/searchAndClickExtrude.js');
 
@@ -32,17 +32,27 @@ const { performRightClickOptionByTitle } = require('./components/performRightCli
         // await performTest(newPage);
 
 
+        //ADDING EXTRUDE FUNCTION TO THE CODE
         //ALL THE CODE TOGETHER
         const desiredIndex = 5; // Or any other desired index
         await clickButtonByIndex(newPage, desiredIndex);
         //Right click option
         const selector = 'div[data-id="Dg4JdGx6jlZTm4XD"]'; // Replace with the appropriate selector
         const title = 'First Sketch'; // Replace with the desired title
+
+
+
+        //EXTRUDE THE FUNCTION
+        await searchAndClickExtrude(newPage);
+        console.log('After waiting for the Extrude function')
+        await waitForEnter();
+
+
+
+
         const editOptions3 = await performRightClickOptionByTitle(newPage, selector, title);
         console.log(editOptions3);
-        // const desiredOption = 'Copy sketch'; //TYPE WHICH EDIT OPTION YOU WANT TO CHOSE
         copySketchFunction(editOptions3, newPage);
-
 
 
 
