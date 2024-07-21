@@ -12,8 +12,9 @@ const pasteIntoSketchFunction = require('./components/pasteIntoSketchFunction.js
 const editIntoSketchFunction = require('./components/editIntoSketchFunction.js');
 const renameIntoSketchFunction = require('./components/renameIntoSketchFunction.js');
 const waitForEnter = require('./components/waitForEnter.js');
-const searchAndClickTransform = require('./components/searchAndClickTransform.js');
+const searchAndClickTransform = require('./components/searchAndClickExtrude.js');
 const searchAndClickCustomExtrude2 = require('./components/searchAndClickCustomExtrude2.js');
+const searchAndClickExtrude = require('./components/searchAndClickExtrude.js');
 
 
 
